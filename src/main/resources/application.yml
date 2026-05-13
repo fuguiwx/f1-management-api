@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://yamabiko.proxy.rlwy.net:55603/railway
+    username: postgres
+    password: f1project2026
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: never
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
