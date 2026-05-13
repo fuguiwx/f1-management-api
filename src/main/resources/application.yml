@@ -3,9 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://yamabiko.proxy.rlwy.net:55603/railway?sslmode=require
-    username: postgres
-    password: f1project2026
+    url: ${DATABASE_URL}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 5
