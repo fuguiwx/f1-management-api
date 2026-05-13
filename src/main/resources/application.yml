@@ -1,18 +1,27 @@
+# Spring Boot 服务端口
 server:
   port: 8080
 
+# 数据库 + 项目核心配置
 spring:
   datasource:
+    # Railway PostgreSQL 连接地址
     url: jdbc:postgresql://yamabiko.proxy.rlwy.net:55603/railway?sslmode=require
+    # 数据库用户名
     username: postgres
+    # 数据库密码（与Railway平台一致）
     password: f1project2026
+    # PostgreSQL 驱动类
     driver-class-name: org.postgresql.Driver
+    # 数据库连接池配置
     hikari:
       maximum-pool-size: 5
+  # 关闭自动SQL初始化，避免冲突
   sql:
     init:
       mode: never
 
+# MyBatis 驼峰命名转换（数据库下划线 → Java驼峰）
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
