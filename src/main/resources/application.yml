@@ -11,7 +11,9 @@ spring:
       maximum-pool-size: 5
   sql:
     init:
-      mode: always  # 保持always，自动建表
+      mode: always
+      platform: postgresql
+      continue-on-error: true
 
 mybatis:
   configuration:
