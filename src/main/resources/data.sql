@@ -78,3 +78,12 @@ INSERT INTO track (id, name, location, length, lap, image, description, create_t
                                                                                          (22, '拉斯维加斯街道赛道', '美国', '6.120km', 50, 'https://f1-images-1429537737.cos.ap-beijing.myqcloud.com/track/Las%20Vegas%20Strip%20Circuit.jpg', '沿拉斯维加斯大道打造的夜间奢华街道赛道，霓虹夜景加持辨识度拉满。长直道车速惊人，弯角设计偏向娱乐观赏性，是F1商业属性最强、关注度最高的分站之一。', '2026-05-09 16:47:08'),
                                                                                          (23, '卢赛尔国际赛道', '卡塔尔', '5.419km', 57, 'https://f1-images-1429537737.cos.ap-beijing.myqcloud.com/track/Lusail%20International%20Circuit.jpg', '中东沙漠夜赛赛道，赛道走线流畅圆润，中高速弯比例高，整体节奏均衡。夜间温度适宜轮胎工作，比赛节奏平稳，赛季末期成为车手抢分、车队布局收官战的关键场地。', '2026-05-09 16:47:08'),
                                                                                          (24, '亚斯码头赛道', '阿联酋阿布扎比', '5.281km', 58, 'https://f1-images-1429537737.cos.ap-beijing.myqcloud.com/track/Yas%20Marina%20Circuit.jpg', 'F1赛季固定收官战场地，赛道包含隧道弯、港口游艇景观，夜赛环境唯美。赛道可调度弯角设计合理，超车机会充足，每年都在这里决出年度车手与车队总冠军，承载无数收官经典时刻。', '2026-05-09 16:47:08');
+
+-- ============================================
+-- 3. 重置自增序列（放在 data.sql 最末尾）
+-- ============================================
+SELECT setval('user_id_seq', (SELECT MAX(id) FROM "user"));
+SELECT setval('discuss_id_seq', (SELECT MAX(id) FROM discuss));
+SELECT setval('driver_id_seq', (SELECT MAX(id) FROM driver));
+SELECT setval('track_id_seq', (SELECT MAX(id) FROM track));
+SELECT setval('team_id_seq', (SELECT MAX(id) FROM team));
